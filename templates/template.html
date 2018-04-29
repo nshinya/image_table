@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+</head>
+<body>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script src="static/js/datatable.js"></script>
+    <div class="container">
+        <table class="dataframe table table-bordered table-hover">
+            <thead>
+                <tr>
+                {% for k in data[0] %}
+                    <th>{{ k }}</th>
+                {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+            {% for d in data %}
+                <tr>
+                    {% for k in d %}
+                    {% if k.startswith("image") %}
+                    <td><img src="{{ d[k] }}" width="200px"/></td>
+                    {% else %}
+                    <td>{{ d[k] }}</td>
+                    {% endif %}
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
