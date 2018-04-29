@@ -9,12 +9,12 @@ def usage1():
 
     df = pd.read_csv("data.csv", names=["name", "path", "cat score"])
     df.insert(2, "image", df["path"])
-    df = image_table.image_column(df, image_headers=["image"], image_width=300)
+    df = image_table.image_column(df, image_headers=["image"], escape_headers=["name"], image_width=200)
 
     data = df.to_html(
         classes=["table", "table-bordered", "table-hover"],
-        columns=["name", "path", "image"],
-        escape=False
+        escape=False,
+        index=False
         )
     html = image_table.render_df(data, "templates/template_for_df.html")
     image_table.save_html(html, "test1.html")
