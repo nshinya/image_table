@@ -1,7 +1,11 @@
-import image_table
 import pandas as pd
 import openpyxl
 from collections import OrderedDict
+
+import os
+import sys
+sys.path.append(os.pardir)
+import image_table
 
 
 def usage1():
