@@ -6,4 +6,4 @@ Functions to create a table with images from a pandas DataFrame.
 2. To HTML using DataFrame.to_dict() and jinja2
 3. To Excel using DataFrame.to_excel() and openpyxl
 
-See example in example.py.
+See example in [example.py](https://github.com/nshinya/image_table/blob/master/example.py).
